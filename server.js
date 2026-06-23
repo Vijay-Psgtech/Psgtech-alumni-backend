@@ -17,7 +17,7 @@ const allowedOrigins = [
   "http://127.0.0.1:3000",
   "http://127.0.0.1:5173",
   "http://127.0.0.1:5174",
-  "http://localhost:5000",
+  "http://localhost:5100",
 ];
 
 app.use(
@@ -83,6 +83,9 @@ app.use("/api/reports", require("./routes/adminReports"));
 
 // User management (Admin only)
 app.use("/api/users", require("./routes/users"));
+
+// Campaign management (Admin only)
+app.use("/api/campaigns", require("./routes/campaigns"));
 
 // ── 404 handler ──────────────────────────────────────────────────
 app.use((req, res) => {
